@@ -177,6 +177,11 @@ function App() {
           </div>
       )}
       </div>
+      {user?.displayName ? (
+      <ImageUpload username={user.displayName} />
+      ) : (
+          <h3>ログインしてください</h3>
+      )}
       <div className="app_posts">
         <div className="app_postsLeft">
             {
@@ -203,11 +208,6 @@ function App() {
         </div>
       </div>
 
-      {user?.displayName ? (
-      <ImageUpload username={user.displayName} />
-      ) : (
-          <h3>ログインしてください</h3>
-      )}
     </div>
   );
 }
