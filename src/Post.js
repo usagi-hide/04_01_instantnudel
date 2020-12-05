@@ -57,7 +57,7 @@ function Post({ postId, user, username, caption, imageUrl }) {
         <input
           className="post_input"
           type="text"
-          placeholder="Add a comment..."
+          placeholder="コメントを追加"
           value={comment}
         onChange={(e) => setComment(e.target.value)}
         />

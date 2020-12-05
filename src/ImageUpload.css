@@ -1,15 +1,28 @@
 .imageupload {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 490px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: white;
+  background-color: rgb(185, 185, 185);
+  padding: 10px;
   
 }
 
 .imageupload_progress {
   width: 100%;
+  height: 40px;
+}
+
+.addCaption {
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.addButton {
+  margin: 0 auto;
+  background-color: lightgray;
 }

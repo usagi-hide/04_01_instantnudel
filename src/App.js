@@ -7,6 +7,8 @@ import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
 import ImageUpload from './ImageUpload';
 import InstagramEmbed from 'react-instagram-embed';
+import logo from './logo.png';
+
 
 function getModalStyle() {
   const top = 50;
@@ -110,7 +112,7 @@ function App() {
           <form className="app_signup">
             <center>
                 <img className="app_headerImage"
-                src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" alt="" />
+                src={logo} alt="" />
               
             </center>
               <Input
@@ -144,7 +146,7 @@ function App() {
           <form className="app_signup">
             <center>
                 <img className="app_headerImage"
-                src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" alt="" />
+                src={logo} alt="" />
               
             </center>
               <Input
@@ -167,29 +169,31 @@ function App() {
 
       <div className="app_header">
         <img className="app_headerImage"
-          src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" alt=""/>
+          src={logo} alt="" />
       {user ? (
-        <Button onClick={() => auth.signOut()}>Logout</Button>
+        <Button  onClick={() => auth.signOut()}>Logout</Button>
       ) : (
           <div className="app_loginContainer">
-            <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
-            <Button onClick={() => setOpen(true)}>Sign Up</Button>
+            <Button  onClick={() => setOpenSignIn(true)}>Sign In</Button>
+            <Button  onClick={() => setOpen(true)}>Sign Up</Button>
           </div>
       )}
       </div>
       {user?.displayName ? (
       <ImageUpload username={user.displayName} />
       ) : (
-          <h3>ログインしてください</h3>
+          <h3 className="yellow">ログインしてください</h3>
       )}
       <div className="app_posts">
         <div className="app_postsLeft">
+          
             {
               //投稿のループ処理
               posts.map(({id, post}) => (
                 <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
               ))
             }
+
               </div>
         <div className="app_postsRight">
       {/* insta埋め込み */}
